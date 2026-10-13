@@ -2138,9 +2138,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 1,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 1,
           "unseenGraceDistance": 10000
         }
       ],
@@ -6133,6 +6133,62 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "Tutorial_Section",
+      "persistentUuid": "43d874f0-d796-4ece-815c-0a4184ad5b8c",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Flash",
+          "type": "Flash::Flash",
+          "HalfPeriodTime": 0.5,
+          "IsFlashing": false,
+          "FlashDuration": 0
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Press \"Start\" Button to Execute Protocol ZERO",
+      "font": "490034af0b44b2d8e88911e4b30bf82a51e9fd67c1688a44a9c36e10ea360cd8_Kenney Pixel.ttf",
+      "textAlignment": "center",
+      "characterSize": 60,
+      "color": {
+        "b": 35,
+        "g": 35,
+        "r": 245
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 4,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Press \"Start\" Button to Execute Protocol ZERO",
+        "font": "490034af0b44b2d8e88911e4b30bf82a51e9fd67c1688a44a9c36e10ea360cd8_Kenney Pixel.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 60,
+        "lineHeight": 0,
+        "color": "245;35;35"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -6242,6 +6298,9 @@
       },
       {
         "objectName": "crates"
+      },
+      {
+        "objectName": "Tutorial_Section"
       }
     ]
   },
@@ -6251,7 +6310,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "beginning of scene",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6343,6 +6401,28 @@
                 "",
                 "\"spawn\""
               ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "Tutorial_Section",
+                "Tween",
+                "\"FadeIn\"",
+                "255",
+                "\"easeInCirc\"",
+                "3",
+                ""
+              ]
             }
           ]
         }
@@ -6354,7 +6434,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "constants",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6672,7 +6751,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6682,7 +6760,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "nanopaste",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6765,7 +6842,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7068,7 +7144,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "attack",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7078,7 +7153,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "slash",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -8356,7 +8430,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "ray of doom",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -9417,7 +9490,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -9476,6 +9548,39 @@
                 "yes",
                 "80",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Flash::Flash::Flash"
+              },
+              "parameters": [
+                "Tutorial_Section",
+                "Flash",
+                "3",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "Tutorial_Section",
+                "Tween",
+                "\"FadeIn\"",
+                "0",
+                "\"easeOutQuad\"",
+                "3",
+                "yes"
               ]
             }
           ]
@@ -10295,6 +10400,10 @@
     {
       "name": "FireBullet",
       "type": "FireBullet::FireBullet"
+    },
+    {
+      "name": "Flash",
+      "type": "Flash::Flash"
     },
     {
       "name": "Flippable",

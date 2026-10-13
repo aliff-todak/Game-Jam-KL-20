@@ -17,7 +17,7 @@
     "pixelsRounding": true,
     "projectUuid": "367e580d-34b2-4e61-9d11-f7a72e86f4a0",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "",
     "version": "1.0.0",
     "name": "Game JAM TD5",
